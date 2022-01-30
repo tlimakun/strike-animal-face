@@ -1,11 +1,12 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const HomeScreen = () => {
   return (
-    <View>
+    <SafeAreaView>
       <Text>Home Screen</Text>
-    </View>
+    </SafeAreaView>
   );
 };
 
