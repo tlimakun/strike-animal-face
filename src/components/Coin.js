@@ -5,6 +5,7 @@ import { Image } from "react-native-elements";
 // colors
 import colors from "../resources/color-info";
 
+// component that show player obtained coin in current round
 const Coin = () => {
   return (
     <View style={styles.container}>
