@@ -4,6 +4,9 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import AppLoading from "expo-app-loading";
 import { useFonts } from "expo-font";
+import { Provider } from "react-redux";
+
+import { store } from "./src/redux/store";
 
 // screen
 import HomeScreen from "./src/screens/HomeScreen";
@@ -43,5 +46,9 @@ export default () => {
     return <AppLoading />;
   }
 
-  return <App />;
+  return (
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
 };
