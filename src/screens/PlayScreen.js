@@ -5,6 +5,7 @@ import {
   StyleSheet,
   TouchableHighlight,
   Dimensions,
+  Modal,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Icon } from "react-native-elements";
@@ -12,6 +13,7 @@ import { Icon } from "react-native-elements";
 // components
 import Coin from "../components/Coin";
 import Health from "../components/Health";
+import RoundTimer from "../components/RoundTimer";
 
 // colors
 import colors from "../resources/color-info";
@@ -23,7 +25,7 @@ const PlayScreen = () => {
     <SafeAreaView style={mainStyles.container}>
       <View style={headerStyles.container}>
         <View style={headerStyles.leftContainer}>
-          <Text style={headerStyles.timerText}>30</Text>
+          <RoundTimer />
         </View>
         <View style={headerStyles.middleContainer}>
           <Text style={headerStyles.levelText}>NORMAL</Text>
@@ -72,8 +74,6 @@ const headerStyles = StyleSheet.create({
   },
   leftContainer: {
     flex: 2.5,
-    alignItems: "flex-start",
-    justifyContent: "center",
   },
   middleContainer: {
     flex: 5,
@@ -84,10 +84,6 @@ const headerStyles = StyleSheet.create({
     flex: 2.5,
     alignItems: "flex-end",
     justifyContent: "center",
-  },
-  timerText: {
-    fontFamily: "MarkerFelt",
-    fontSize: 30,
   },
   levelText: {
     fontFamily: "VtcAle",

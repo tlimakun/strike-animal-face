@@ -6,12 +6,12 @@ import {
   ADD_TIME_LEFT,
 } from "../actions/types";
 
-export default (state = { isRoundActive: false, timeLeft: 0 }, action) => {
+export default (state = { isRoundActivate: false, timeLeft: 0 }, action) => {
   switch (action.type) {
     case ACTIVATE_ROUND:
-      return { ...state, isRoundActive: true };
+      return { ...state, isRoundActivate: true };
     case DEACTIVATE_ROUND:
-      return { ...state, isRoundActive: false };
+      return { ...state, isRoundActivate: false };
     case SET_TIME_LEFT:
       return { ...state, timeLeft: action.payload };
     case REDUCE_TIME_LEFT:
