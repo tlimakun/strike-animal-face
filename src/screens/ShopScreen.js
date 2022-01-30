@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-const ShopScreen = function () {
+const ShopScreen = () => {
   return (
     <View>
       <Text>Shop Screen</Text>
