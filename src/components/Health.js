@@ -3,7 +3,7 @@ import { View, StyleSheet } from "react-native";
 import { Icon } from "react-native-elements";
 
 // colors
-import colors from "../resources/colorsInfo";
+import colors from "../resources/color-info";
 
 // this constant is dummy constant
 // TODO: Remove this constant when there is max health and health left in redux
@@ -34,8 +34,6 @@ const Health = () => {
 
 const styles = StyleSheet.create({
   container: {
-    borderWidth: 1,
-    borderColor: "blue",
     flex: 1,
     flexDirection: "row",
     justifyContent: "flex-end",
