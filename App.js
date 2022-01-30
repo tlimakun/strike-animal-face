@@ -2,6 +2,8 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import AppLoading from "expo-app-loading";
+import { useFonts } from "expo-font";
 
 // screen
 import HomeScreen from "./src/screens/HomeScreen";
@@ -15,7 +17,7 @@ const App = () => {
     <SafeAreaProvider>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="Home"
+          initialRouteName="Play"
           screenOptions={{
             headerShown: false,
             cardStyle: { backgroundColor: "#FFFFFF" },
@@ -31,5 +33,15 @@ const App = () => {
 };
 
 export default () => {
+  const [fontsLoaded] = useFonts({
+    MarkerFelt: require("./src/fonts/MarkerFelt.ttf"),
+    NeonGlow: require("./src/fonts/NeonGlow.ttf"),
+    VtcAle: require("./src/fonts/vtcsupermarkets-ale.ttf"),
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
+
   return <App />;
 };
