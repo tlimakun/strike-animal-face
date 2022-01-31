@@ -7,14 +7,14 @@ import { connect } from "react-redux";
 import colors from "../resources/color-info";
 
 // component that show player obtained coin in current round
-const Coin = ({ coin }) => {
+const BestCoin = ({ coin }) => {
   return (
     <View style={styles.container}>
       <Image
-        source={require("../resources/coin.png")}
+        source={require("../resources/crown.png")}
         style={styles.coinImage}
       />
-      <Text style={styles.coinText}>{coin.coin}</Text>
+      <Text style={styles.coinText}>{coin.bestCoin}</Text>
     </View>
   );
 };
@@ -41,4 +41,4 @@ const mapStatetoProps = function ({ coin }) {
   return { coin: coin };
 };
 
-export default connect(mapStatetoProps, null)(Coin);
+export default connect(mapStatetoProps, null)(BestCoin);

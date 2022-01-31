@@ -20,10 +20,11 @@ const App = () => {
     <SafeAreaProvider>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="Play"
+          initialRouteName="Home"
           screenOptions={{
             headerShown: false,
             cardStyle: { backgroundColor: "#FFFFFF" },
+            animationEnabled: false,
           }}
         >
           <Stack.Screen name="Home" component={HomeScreen} />
@@ -38,7 +39,6 @@ const App = () => {
 export default () => {
   const [fontsLoaded] = useFonts({
     MarkerFelt: require("./src/fonts/MarkerFelt.ttf"),
-    NeonGlow: require("./src/fonts/NeonGlow.ttf"),
     VtcAle: require("./src/fonts/vtcsupermarkets-ale.ttf"),
   });
 

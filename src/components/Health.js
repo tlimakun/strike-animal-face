@@ -1,22 +1,16 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
 import { Icon } from "react-native-elements";
+import { connect } from "react-redux";
 
 // colors
 import colors from "../resources/color-info";
 
-// this constant is dummy constant
-// TODO: Remove this constant when there is max health and health left in redux
-const health = {
-  maxHealth: 3,
-  healthLeft: 2,
-};
-
 // component that show player health left
-const Health = () => {
+const Health = ({ level, health }) => {
   // render number of hearts, depending on player max health and health left
   const renderHealth = () => {
-    return Array.from(Array(health.maxHealth)).map((item, i) => {
+    return Array.from(Array(level.maxHealth)).map((item, i) => {
       return (
         <Icon
           key={i}
@@ -41,4 +35,8 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Health;
+const mapStatetoProps = function ({ level, health }) {
+  return { level: level, health: health };
+};
+
+export default connect(mapStatetoProps, null)(Health);
